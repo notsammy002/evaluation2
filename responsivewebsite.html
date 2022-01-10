@@ -30,13 +30,40 @@
             display:flex;
             flex-flow: row wrap;
         }
+
+        #form{
+            padding: 15px;
+          width: 400px;
+          height: 400px;
+          margin: 30px;
+          border: 5px solid black;
+        }
         </style>
 </head>
 
+<script>
+    document.querySelector("form").addEventListener("submit", submitForm);
 
+    function submitForm(){
+        event.preventDefault();
+        var cousre = document.querySelector("#add-course").value;
+        var details = document.querySelector("#add-course-details").value;
+        console.log(cousre, details)
+    }
+</script>
 
 
 <body>
+    <form id= "form">
+        <input style="margin: 30px;  font-size: 15px; height: 30px;" id="add-course" type="add course" placeholder="ADD COUSRE" />
+        <br>
+        <input style="margin: 30px; font-size: 20px; height: 100px;" id="add-course-details" type="add course details" placeholder="ADD COUSRE details" />
+        <br>
+        <input style="margin: 30px;  font-size: 20px; height: 50px;" type="submit" onclick="alert('Success')" />
+    </form>
+
+
+
 <div class="course-container">
 <div class="course-card-container">
    <h1>COURSE</h1>
